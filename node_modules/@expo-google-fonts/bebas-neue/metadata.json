@@ -1,0 +1,12 @@
+{
+  "family": "Bebas Neue",
+  "variants": ["regular"],
+  "subsets": ["latin", "latin-ext"],
+  "version": "v2",
+  "lastModified": "2020-09-10",
+  "files": {
+    "regular": "http://fonts.gstatic.com/s/bebasneue/v2/JTUSjIg69CK48gW7PXooxW5rygbi49c.ttf"
+  },
+  "category": "display",
+  "kind": "webfonts#webfont"
+}
