@@ -1,6 +1,5 @@
 import { TextInput, View } from 'react-native';
 import styled from 'styled-components/native';
-import { MotiText } from '@motify/components';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export const Wrapper = styled(View)`

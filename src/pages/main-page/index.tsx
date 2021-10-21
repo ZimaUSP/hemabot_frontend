@@ -24,7 +24,7 @@ const MainPage= () => {
             <Input label='Para onde deseja enviar?'/>
             <Input label='Nome do Receptor'/>
             <Input label='O que estamos entregando?'/>
-            <MainButton name="CHAMAR O GLOBI" onPress={handleLogin}/>
+            <MainButton filled={true} name="CHAMAR O ROBÔ" onPress={handleLogin}/>
         </Container>
     )
 }

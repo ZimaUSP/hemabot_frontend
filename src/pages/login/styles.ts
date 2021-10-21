@@ -1,5 +1,8 @@
 import styled from "styled-components/native";
 
+export const HeaderImg = styled.Image` 
+    flex:0.5;
+`
 export const Container = styled.View`
     background-color: #100F6B;
     flex: 1;

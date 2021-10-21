@@ -3,12 +3,13 @@ import styled from "styled-components/native";
 
 
 export const Button = styled.TouchableOpacity`
-    background-color:#FF545E;
-    border: 1px transparent;
+    margin-top: 16px;
+    border: 2px #FF545E;
     align-items: center;
     justify-content: center;
     height: 56px;
     border-radius: 8px;
+    width: 100%;
 `
 
 export const Buttontext = styled.Text`
