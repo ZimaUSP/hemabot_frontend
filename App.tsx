@@ -4,9 +4,9 @@ import React from 'react';
 import {useFonts} from 'expo-font';
 import {Poppins_400Regular, Poppins_600SemiBold} from '@expo-google-fonts/poppins';
 import {BebasNeue_400Regular } from '@expo-google-fonts/bebas-neue';
-import Login from './src/pages/login';
 import { AppStack } from './src/routes/AppStack';
 import AppLoading from 'expo-app-loading';
+import AppProvider from './src/hooks';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,8 +19,10 @@ export default function App() {
   }
   return (
     <>
-      <AppStack/>
-      <StatusBar style="auto" />
+      <AppProvider>
+        <AppStack/>
+        <StatusBar style="auto" />
+      </AppProvider>
       </>
   );
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "globi_front_end",
-    "slug": "globi_front_end",
+    "name": "hemabot_app",
+    "slug": "hemabot_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
