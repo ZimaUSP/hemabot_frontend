@@ -1,10 +1,9 @@
-import { TouchableOpacity } from 'react-native';
 import styled from "styled-components/native";
 
 
 export const Button = styled.TouchableOpacity`
+    border: 2px #FF7719;
     margin-top: 16px;
-    border: 2px #FF545E;
     align-items: center;
     justify-content: center;
     height: 56px;

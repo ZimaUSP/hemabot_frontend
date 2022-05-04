@@ -10,15 +10,33 @@ const{Navigator, Screen} = createBottomTabNavigator();
 function BottomTabs(){
     return(
         <Navigator 
-        screenOptions={{ headerShown: false}}>
+            screenOptions={{headerShown:false}}
+             //@ts-ignore
+            tabBarOptions={{ 
+            style:{
+                elevation: 0,
+                shadowOpacity: 0,
+                height: 64,
+            },
+            tabStyle:{
+                flexDirection: 'column',
+            },
+            iconStyle:{
+                width: 20,
+                height: 20,
+            },
+            inactiveBackgroundColor: "#1455d1",
+            activeBackgroundColor: "#133c8B",
+            inactiveTintColor:"#FFFFF"}}
+            >
             <Screen
             name="MainPage"
             component={MainPage}
             options={{
                 tabBarLabel:'',
-                tabBarIcon:({color, size, focused}) =>{
+                tabBarIcon:({size}) =>{
                     return(
-                        <FontAwesome name='paper-plane' size={size} color={focused ? "#FF545E" : color}/>
+                        <FontAwesome name='paper-plane' size={size} color={"#F5F5EF"}/>
                     );
                 }
             }}/>
@@ -27,9 +45,9 @@ function BottomTabs(){
             component ={Info}
             options={{
                 tabBarLabel:'',
-                tabBarIcon:({color, size, focused}) =>{
+                tabBarIcon:({size}) =>{
                     return(
-                        <FontAwesome name='book' size={size} color={focused ? "#FF545E" : color}/>
+                        <FontAwesome name='book' size={size} color={"#F5F5EF"}/>
                     );
                 }
             }} />
@@ -38,9 +56,9 @@ function BottomTabs(){
             component ={Profile}
             options={{
                 tabBarLabel:'',
-                tabBarIcon:({color, size, focused}) =>{
+                tabBarIcon:({size}) =>{
                     return(
-                        <FontAwesome name='user' size={size} color={focused ? "#FF545E" : color}/>
+                        <FontAwesome name='user' size={size} color={"#F5F5EF"}/>
                     );
                 }
             }} />

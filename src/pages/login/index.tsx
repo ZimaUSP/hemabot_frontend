@@ -1,31 +1,37 @@
 import React from "react";
 import './styles';
-import { Container, InputContainer, Title, SimpleText, HeaderImg} from "./styles";
-import { Link } from "@react-navigation/native";
-import MainButton from "../../@components/main-button";
-import Input from "../../@components/input";
+import { Container, InputContainer, Title, SimpleText, Redirect} from "./styles";
+import MainButton from "../../components/Main Button";
+import Input from "../../components/Input";
 import { useNavigation } from '@react-navigation/native';
-import LoginImg from '../../assets/LoginImg.png';
+import Link from "../../components/Link";
 
 
 const Login= () => {
     const {navigate} = useNavigation();
     
-    const handleLogin=() =>{
+    const handleAuth=() =>{
         //@ts-ignore
         navigate('BottomTabs');
+    }
+    const handleSignUp=() =>{
+        //@ts-ignore
+        navigate('SignUp');
     }
 
     return(
         <>
             <Container>
-                <HeaderImg source={LoginImg}/>
+                {/* <HeaderImg source={LoginImg}/> */}
                 <InputContainer>
                     <Title>LOGIN</Title>
-                    <Input label='Email'/>
-                    <Input label='Senha' password/>
-                    <SimpleText>Ainda não tem conta? CLIQUE AQUI</SimpleText>
-                    <MainButton filled={true} name="ENTRAR" onPress={handleLogin}/>
+                    <Input title={true} label='Email:'/>
+                    <Input title={true} label='Senha:' password/>
+                    <Redirect>
+                        <SimpleText>Não tem conta?</SimpleText>
+                        <Link color={true} text="CLIQUE AQUI" onPress={handleSignUp}/>
+                    </Redirect>
+                    <MainButton filled={true} name="ENTRAR" onPress={handleAuth}/>
                 </InputContainer>
             </Container>
         </>

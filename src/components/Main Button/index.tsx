@@ -13,8 +13,8 @@ const MainButton: React.FC<ButtonProps> = ({name, onPress, filled})=> {
     return(
         <Button 
         onPress={onPress}
-        style={filled?{backgroundColor:'#FF545E'}:{backgroundColor:'none'}}>
-            <Buttontext style={filled?{color:'#fff'}:{color:'#FF545E'}}>
+        style={filled?{backgroundColor:'#ff7719'}:{backgroundColor:'none'}}>
+            <Buttontext style={filled?{color:'#fff'}:{color:'#ff7719'}}>
                 {name}
             </Buttontext>
         </Button>

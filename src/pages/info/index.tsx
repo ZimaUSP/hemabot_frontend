@@ -1,9 +1,9 @@
 import React from "react";
 import './styles';
-import { Container, Title, TextBlock, DecorContainer} from "./styles";
+import { Container, Title, TextBlock} from "./styles";
 import {TouchableOpacity, Text, Alert} from 'react-native'
-import MainButton from "../../@components/main-button";
-import Input from "../../@components/input";
+import MainButton from "../../components/Main Button";
+import Input from "../../components/Input";
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -25,7 +25,6 @@ const Info= () => {
                 nosso robô usa sensores de distância e movimento para mapear o espaço onde se encontra, adaptando sua rota para desviar de obstáculos
                  e realizando o trajeto de forma autônoma, podendo carregar até 50kg de carga, sejam documentos, exames, medicamentos, e até equipamentos de pequeno porte.</TextBlock>
         </Container>
-        <DecorContainer/>
         </>
     )
 }

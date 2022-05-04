@@ -11,33 +11,37 @@ export const Wrapper = styled(View)`
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding-right: 48px;
+  justify-content: space-between;
   margin-bottom: 16px;
 `;
 
+export const InputTitle = styled.Text`
+    color: #100F6B;
+    font-size: 16px;
+    font-family: 'Poppins_600SemiBold';
+`
+
 export const InputArea = styled(TextInput)`
-  position: absolute;
+margin-left: 16px;
   width: 100%;
   font-size: 16px;
   color: black;
-  margin-top: 16px;
   overflow: hidden;
 `;
 
 
 export const IconWrapper = styled(TouchableOpacity)`
-  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 8px;
 `;
 
 export const Container = styled(View)`
-  position: relative;
   height: 100%;
-  width: 100%;
-  overflow: hidden;
+  width: 80%;
+  display: flex;
+  flex-direction:row;
+  align-items: center ;
 `;

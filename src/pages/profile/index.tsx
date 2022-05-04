@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import './styles';
-import { TextContainer, ProfileImage, Subtitle, Title, HeaderContainer, ImgHeader, InfoBox, InfoText, InfoTitle, ButtonView} from "./styles";
-import MainButton from "../../@components/main-button";
+import { TextContainer, Title, HeaderContainer, ButtonView, ImageContainer, Container} from "./styles";
+import MainButton from "../../components/Main Button";
 import { useNavigation } from '@react-navigation/native';
-import ProfileImg from '../../assets/ross.jpeg'
-import HeaderImg from '../../assets/LoginImg.png'
+import Input from "../../components/Input";
+import { Formik } from 'formik';
+
 
 
 const Profile= () => {
@@ -14,34 +15,74 @@ const Profile= () => {
         //@ts-ignore
         navigate('Login');
     }
+    const [isEditable, setIsEditable] = useState(false);
 
     return(
-        <>
-            <HeaderContainer>
-                <ImgHeader source={HeaderImg}/>
-            </HeaderContainer>
-            <ProfileImage source={ProfileImg}/>
+        <Container>
+            <ImageContainer>
+                {/* <ImgHeader source={HeaderImg}/> */}
+            </ImageContainer>
             <TextContainer>
-                <Title>ROSS SUMIE</Title>
-                <Subtitle>Técnico de enfermagem</Subtitle>
-                    <InfoBox>
-                        <InfoTitle>EMAIL:</InfoTitle>
-                        <InfoText>rossanasumie@usp.br</InfoText>
-                    </InfoBox>
-                    <InfoBox>
-                        <InfoTitle>CELULAR:</InfoTitle>
-                        <InfoText>(11)4002-8922</InfoText>
-                    </InfoBox>
-                    <InfoBox>
-                        <InfoTitle>CPF:</InfoTitle>
-                        <InfoText>456.351.438-37</InfoText>
-                    </InfoBox>
-                    {/* <ButtonView>
-                        <MainButton name='EDITAR' filled={false}/>
-                        <MainButton name='LOG OUT' filled={true}/>
-                    </ButtonView> */}
+                <HeaderContainer>
+                    <Title>Ross Sumie</Title>
+                    {/* <Subtitle>Técnico de enfermagem</Subtitle> */}
+                </HeaderContainer>
+                <Formik
+                    initialValues={{
+                        name:'Ross Sumie',
+                        email:'rossanasumie@usp.br',
+                        cpf:'111.111.111-11',
+                        password:'zimazima'
+                    }}
+                    onSubmit={handleLogin}>
+                        {({
+                            values,
+                            handleChange,
+                        })=>(
+                    <>
+                    <Input 
+                        title={true}
+                        label={'Nome:'}
+                        value={values.name}
+                        onChangeText={handleChange('name')}
+                        editable={isEditable}
+                        />
+                    <Input 
+                        title={true} 
+                        label={'Email:'}
+                        value={values.email}
+                        onChangeText={handleChange('email')}
+                        editable={isEditable}
+
+                        />
+
+                    <Input 
+                        title={true} 
+                        label={'CPF:'}
+                        value={values.cpf}
+                        onChangeText={handleChange('cpf')}
+                        editable={isEditable}
+
+                        />
+                    <Input 
+                        title={true} 
+                        label={'Senha:'}
+                        value={values.password}
+                        onChangeText={handleChange('password')}
+                        editable={isEditable}
+                        password
+                        />
+                    </>
+                        )}
+                    </Formik>
+                    <ButtonView>
+                        <MainButton name={isEditable? 'SALVAR': 'EDITAR'} filled={false} onPress={()=> setIsEditable(!isEditable)}/>
+                        <MainButton name='LOG OUT' filled={true} onPress={()=> 
+                            //@ts-ignore
+                            navigate('Login')}/>
+                    </ButtonView>
             </TextContainer>
-        </>
+        </Container>
     )
 }
 export default Profile;

@@ -21,10 +21,3 @@ export const TextBlock = styled.Text`
     font-family: 'Poppins_400Regular';
     text-align: justify;
 `
-export const DecorContainer = styled.View`
-    flex: 1;
-    background-color: #100F6B;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-
-`
